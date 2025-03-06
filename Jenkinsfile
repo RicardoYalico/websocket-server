@@ -22,7 +22,7 @@ pipeline {
                         docker build -t socket-server .
                         docker stop socket-server-container || true
                         docker rm socket-server-container || true
-                        docker run -d -p 8080:8080 --name socket-server-container --restart unless-stopped socket-server
+                        docker run -d -p 3003:8080 --name socket-server-container --restart unless-stopped socket-server
                         docker image prune -a -f
                     '''
                 }
